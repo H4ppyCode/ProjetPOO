@@ -10,3 +10,6 @@ class Arme {
         int degats;
 }; 
 #endif
+
+
+salut
