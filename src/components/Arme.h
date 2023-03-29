@@ -1,14 +1,23 @@
-#ifndef PERSON_H 
-#define PERSON_H 
-#include <string> 
+#ifndef ARME_H
+#define ARME_H
+
+#include <string>
 
 class Arme {
-    public : 
-        std::string nom; 
-    private : 
-        std::string nom; 
-        int degats;
-}; 
-#endif
+private:
+    std::string nom;
+    int degats;
 
-salut
+public:
+    Arme(std::string n, int d);
+
+    ~Arme();
+
+    int getDegats() const;
+
+    void setDegats(int d);
+
+    std::string getNom() const;
+};
+
+#endif // ARME_H
