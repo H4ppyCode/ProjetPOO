@@ -8,9 +8,9 @@ int Arme::getDegats() const {
     return degats;
 }
 
-void Arme::setDegats(int d) {
-    degats = d;
-}
+// void Arme::setDegats(int d) {
+//     degats = d;
+// }
 
 std::string Arme::getNom() const {
     return nom;

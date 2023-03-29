@@ -1,5 +1,6 @@
 #include "Personnage.h"
 #include "Arme.h"
+#include <iostream>
 
 Personnage::Personnage(std::string n, int pdv) : nom(n), pointsDeVie(pdv), arme(nullptr) {}
 
@@ -13,29 +14,9 @@ void Personnage::equiper(Arme* a) {
 
 void Personnage::attaquer(Personnage& cible) {
     if (arme != nullptr) {
-        cible.subirDegats(arme->getDegats());
+        int degats = arme->getDegats();
+        std::string nomArme = arme->getNom();
+        std::cout << nom << " attaque " << cible.nom << " avec " << nomArme << " et lui inflige " << degats << " points de dégâts." << std::endl;
+        cible.pointsDeVie -= degats;
     }
-}
-
-void Personnage::subirDegats(int degats) {
-    pointsDeVie -= degats;
-}
-
-Personnage::Personnage(const Personnage& p) : nom(p.nom), pointsDeVie(p.pointsDeVie), arme(nullptr) {
-    if (p.arme != nullptr) {
-        arme = new Arme(p.arme->getNom(), p.arme->getDegats());
-    }
-}
-
-Personnage& Personnage::operator=(const Personnage& p) {
-    nom = p.nom;
-    pointsDeVie = p.pointsDeVie;
-
-    delete arme;
-    arme = nullptr;
-    if (p.arme != nullptr) {
-        arme = new Arme(p.arme->getNom(), p.arme->getDegats());
-    }
-
-    return *this;
 }

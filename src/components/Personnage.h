@@ -20,7 +20,7 @@ public:
 
     void attaquer(Personnage& cible);
 
-    void subirDegats(int degats);
+    // void subirDegats(int degats);
 
     Personnage(const Personnage& p);
 

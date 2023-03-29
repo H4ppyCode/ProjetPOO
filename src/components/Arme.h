@@ -3,21 +3,21 @@
 
 #include <string>
 
-class Arme {
+class Arme
+{
 private:
     std::string nom;
     int degats;
 
 public:
-    Arme(std::string n, int d);
+    Arme(std::string nom, int degats);
 
     ~Arme();
-
+    std::string getNom() const;
+    
     int getDegats() const;
 
-    void setDegats(int d);
-
-    std::string getNom() const;
+    // void setDegats(int degats);
 };
 
 #endif // ARME_H
